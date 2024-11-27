@@ -11,6 +11,51 @@
  */
 /**
  * @swagger
+ * /api/v1/get/enrolled-students:
+ *   get:
+ *     tags: ['Students Service']
+ *     summary: Get all students who are enrolled in any course
+ *     description: Retrieves a list of students who are registered in any course through the enrollments table.
+ *     responses:
+ *       200:
+ *         description: A list of enrolled students.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: string
+ *                         description: The unique identifier of the student.
+ *                         example: "123e4567-e89b-12d3-a456-426614174000"
+ *                       name:
+ *                         type: string
+ *                         description: The name of the student.
+ *                         example: "Jane Doe"
+ *       500:
+ *         description: Internal server error.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status_code:
+ *                   type: integer
+ *                   description: The status code of the error.
+ *                   example: 500
+ *                 message:
+ *                   type: string
+ *                   description: The error message.
+ *                   example: "Internal server error!"
+ */
+
+/**
+ * @swagger
  * /api/v1/create/student:
  *   post:
  *     tags: ['Students Service']
